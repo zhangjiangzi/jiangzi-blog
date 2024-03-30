@@ -6,7 +6,7 @@
 <div class="app">
 	<Header />
 
-	<main>
+	<main id="content">
 		<slot />
 	</main>
 
@@ -26,11 +26,11 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
 		width: 100%;
-		max-width: 64rem;
+		max-width: 80rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+    padding: 4rem 1rem 0 1rem;
 	}
 
 	footer {

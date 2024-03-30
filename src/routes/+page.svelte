@@ -1,31 +1,16 @@
 <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
+	const title = '一个绝妙的点子！啊啊';
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>{title}</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 <section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcome_fallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
+	<h1>{title}</h1>
+	<p class="byline">Written on <strong>2023/12/1</strong></p>
+	<div class="post"></div>
 </section>
 
 <style>
@@ -37,23 +22,13 @@
 		flex: 0.6;
 	}
 
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
+	p.byline {
+		max-width: 40rem;
+		margin: 0 auto;
+		padding-bottom: 1.5rem;
+		text-align: center;
+		font-size: 16px;
+		line-height: 1.5;
+		padding-top: 1.5rem;
 	}
 </style>

@@ -1,33 +1,176 @@
 @import '@fontsource/fira-mono';
 
 :root {
-	--font-body: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-body: sabon-next-lt-pro-regular, FZLTKSJW, Arial, -apple-system, BlinkMacSystemFont,
+		'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
-	--color-bg-0: rgb(202, 216, 228);
+	--color-bg-0: #ffffff;
 	--color-bg-1: hsl(209, 36%, 86%);
 	--color-bg-2: hsl(224, 44%, 95%);
-	--color-theme-1: #ff3e00;
-	--color-theme-2: #4075a6;
+	--color-bg-3: #f2f7fd;
+	--color-theme-1: #f33;
 	--color-text: rgba(0, 0, 0, 0.7);
+	--color-text-2: #212121;
+	--color-text-3: #737373;
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+	--scrollbar: #ffffff4d;
 	font-family: var(--font-body);
 	color: var(--color-text);
+	scrollbar-width: thin;
+	scrollbar-color: var(--scrollbar) transparent;
 }
 
 body {
 	min-height: 100vh;
 	margin: 0;
-	background-attachment: fixed;
-	background-color: var(--color-bg-1);
-	background-size: 100vw 100vh;
-	background-image: radial-gradient(
-			50% 50% at 50% 50%,
-			rgba(255, 255, 255, 0.75) 0%,
-			rgba(255, 255, 255, 0) 100%
-		),
-		linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+	color: var(--color-text);
+	background-color: var(--color-bg-0);
+}
+
+body.dark {
+	--color-bg-0: #1a1a1a;
+	--color-bg-2: hsla(0, 0%, 18%, 1);
+	--color-bg-3: #383838;
+	--color-text: #ccc;
+	--color-text-2: #e6e6e6;
+	--logo-color: #f1f1f1;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+	display: block;
+}
+
+a img {
+	border: none;
+}
+
+blockquote {
+	quotes: none;
+}
+
+blockquote:after,
+blockquote:before {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+caption,
+td,
+th {
+	text-align: left;
+	font-weight: 400;
+	vertical-align: middle;
 }
 
 h1,
@@ -50,12 +193,62 @@ a:hover {
 }
 
 h1 {
-	font-size: 2rem;
+	max-width: 80rem;
+	margin: 0 auto;
+	font-weight: bold;
 	text-align: center;
+	font-size: 40px;
+	line-height: 1.2;
+}
+
+h3 {
+	font-size: 24px;
+	line-height: 1.5;
+	margin-top: 1.5rem;
+}
+
+h4 {
+	font-size: 17px;
+	line-height: 1.7;
+	margin-top: 1.5rem;
+}
+
+h5 {
+	font-size: 16px;
+	line-height: 1.7;
+	margin-top: 1.5rem;
+}
+
+h6 {
+	font-size: 14px;
+	line-height: 1.5;
+	margin-top: 1.5rem;
+}
+
+strong {
+	font-weight: 600;
+}
+
+@media only screen and (min-width: 40em) {
+	h1 {
+		font-size: 48px;
+		line-height: 1.2;
+	}
+}
+
+@media only screen and (min-width: 50em) {
+	h1 {
+		font-size: 64px;
+		line-height: 1.2;
+	}
 }
 
 h2 {
-	font-size: 1rem;
+	max-width: 40rem;
+	margin: 4rem 0 0 0;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 1.5;
 }
 
 pre {
@@ -69,15 +262,6 @@ pre {
 	color: var(--color-text);
 }
 
-.text-column {
-	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
-}
-
 input,
 button {
 	font-size: inherit;
@@ -86,6 +270,10 @@ button {
 
 button:focus:not(:focus-visible) {
 	outline: none;
+}
+
+hr {
+	opacity: .1;
 }
 
 @media (min-width: 720px) {
@@ -104,4 +292,89 @@ button:focus:not(:focus-visible) {
 	position: absolute;
 	width: 1px;
 	white-space: nowrap;
+}
+
+ol {
+	display: block;
+	list-style-type: decimal;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	padding-inline-start: 40px;
+}
+
+ul {
+	list-style-type: none;
+}
+
+li {
+	font-size: 16px;
+}
+
+p {
+	margin: 1.5rem 0;
+	font-size: 16px;
+	line-height: 1.7;
+}
+
+img,
+video {
+	display: block;
+	width: 100%;
+}
+
+/* post style */
+
+div.post {
+	max-width: 64rem;
+	margin: 0 auto 4rem auto;
+	padding: 0 1rem;
+}
+
+div.post p {
+	max-width: 50rem;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.post ol {
+	max-width: 50rem;
+	margin: 0 auto;
+	padding-left: 20px;
+}
+
+div.post ul {
+	max-width: 50rem;
+	margin: 0 auto;
+	padding-left: 20px;
+	list-style-type: disc;
+}
+
+div.post li {
+	line-height: 2;
+}
+
+div.post figure {
+	margin: 3rem auto;
+}
+
+div.post figure img {
+	border: 1px solid #dedede;
+}
+
+div.post figcaption {
+	text-align: center;
+	margin-top: 1rem;
+}
+
+@media only screen and (min-width: 40em) {
+	li {
+		font-size: 17px;
+	}
+
+	p {
+		font-size: 17px;
+		line-height: 2;
+	}
 }
