@@ -26,7 +26,7 @@
 	}
 
 	h1.intro-title {
-		max-width: 60rem;
+		max-width: 65rem;
 		margin: 0 auto;
 		font-weight: bold;
 		text-align: center;
